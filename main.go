@@ -2,18 +2,15 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"regexp"
 	"strings"
 )
 
 func main() {
 	stringInput := flag.String("s", "this is an example", "the string from which to generate the n-grams")
-
 	flag.Parse()
 
 	cleanString := stripRegex(*stringInput)
-	print(fmt.Sprintf("cleanString: %v\n", cleanString))
 
 	nGrams := generateNGrams(cleanString)
 
